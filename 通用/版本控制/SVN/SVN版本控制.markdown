@@ -18,18 +18,18 @@
 - Update (更新)：当你已经Checkout了⼀份源代码， Update后就可以和Repository上的源代码同步
 
 ### 1.4 SVN工作流程  
-1、如果本地没有代码，从服务器下载项⽬组最新代码。（Checkout）  
-2、如果已经Checkout并且有⼈已Commit了代码，你可以更新以获得最新代码。（Update）  
-3、进⼊⾃⼰的分⽀，进⾏⼯作，每隔⼀个⼩时向服务器⾃⼰的分⽀提交⼀次代码（很多⼈都有这个习惯。因为有时候⾃⼰对代码改来改去，最后⼜想还原到前⼀个⼩时的版本，或者看看前⼀个⼩时⾃⼰修
+1. 如果本地没有代码，从服务器下载项⽬组最新代码。（Checkout）  
+2. 如果已经Checkout并且有⼈已Commit了代码，你可以更新以获得最新代码。（Update）  
+3. 进⼊⾃⼰的分⽀，进⾏⼯作，每隔⼀个⼩时向服务器⾃⼰的分⽀提交⼀次代码（很多⼈都有这个习惯。因为有时候⾃⼰对代码改来改去，最后⼜想还原到前⼀个⼩时的版本，或者看看前⼀个⼩时⾃⼰修
 改了哪些代码，就需要这样做了）。（Commit）  
-4、下班时间到了，把⾃⼰的分⽀合并到服务器主分⽀上，⼀天的⼯作完成，并反映给服务器。
+4. 下班时间到了，把⾃⼰的分⽀合并到服务器主分⽀上，⼀天的⼯作完成，并反映给服务器。
 （Commit）     
 
 <font color = red>PS：如果两个程序员同时修改了同⼀个⽂件， SVN可以合并这两个程序员的改动，实际上SVN管理源
 代码是以⾏为单位的，就是说两个程序员只要不是修改了同⼀⾏程序，SVN都会⾃动合并两种修改。如
 果是同⼀⾏，SVN会提示⽂件Confict, 冲突，需要⼿动确认。</font>    
      
-![SVN工作流程图](https://note.youdao.com/yws/res/b/WEBRESOURCE05b3fb63c826cef3b9cc04a85daf408b)    
+![SVN工作流程图](https://note--source.oss-cn-shenzhen.aliyuncs.com/notePic/Snipaste_2022-01-09_22-08-39.png)    
 ### 1.5 SVN生命周期
 #### 1.5.1 创建版本库  
 - 版本库相当于⼀个集中的空间，⽤于存放开发者所有的⼯作成果。版本库不仅能存放⽂件，还包括了
@@ -69,102 +69,111 @@ Resolve 操作就是⽤来帮助⽤户找出冲突并告诉版本库如何处理
 过更新他们的⼯作副本来查看这些修改。  
 <font color = red>PS:在提交之前，你必须将⽂件/⽬录添加到待变更列表(版本控制管理中)中。列表中记录了将会被提交的改动。当提交的时候，我们通常会提供⼀个注释来说明为什么会进⾏这些改动。这个注释也会成为版本库历史记录的⼀部分。Commit是⼀个原⼦操作，也就是说要么完全提交成功，要么失败回滚。⽤户不会看到成功提交
 ⼀半的情况。 </font>
----
+<br> </br>
 
 ## 2. SVN安装  
 ### 2.1 SVN下载
 - SVN服务器下载  [服务器下载链接](https://www.visualsvn.com/downloads/)
-- SVN客户端下载  [客户端下载链接](https://tortoisesvn.net/downloads.html)
----
+- SVN客户端下载  [客户端下载链接](https://tortoisesvn.net/downloads.html)   
+<br></br>   
 
 ## 3.SVN操作
 - SVN原生操作     [SVN原生操作](https://www.runoob.com/svn/svn-tutorial.html)
 - TortoiseSVN操作 [TortoiseSVN操作](https://www.runoob.com/svn/tortoisesvn-intro.html)  
 <font color = red>PS:素材目录中有SVN笔记</font>
----
+<br></br>
 
 ## 4.IDEA集成SVN
 ### 4.1 IDEA配置SVN
-1. File —> Other Settings（全局配置；Settings是局部配置） —> Version Control —> Subversion  ![image.png](https://note.youdao.com/yws/res/2/WEBRESOURCE7d33afdfde81d72547d2211460baf892)   
-  
+1. File —> Other Settings（全局配置；Settings是局部配置） —> Version Control —> Subversion  
+ <img style="width:550px;height:400px" src="https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/Snipaste_2022-01-09_22-24-37.png" />
+    
 2. 配置svn  
-![image.png](https://note.youdao.com/yws/res/5/WEBRESOURCEb510ecad00a22e8df7007c7461c50ca5) <font color = red>PS:找不到svn.exe⽂件，TortoiseSVN的bin⽬录下⾯没有svn.exe
+![20220109223029](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109223029.png) <font color = red>PS:找不到svn.exe⽂件，TortoiseSVN的bin⽬录下⾯没有svn.exe
 之所以没有是因为安装TortoiseSVN的时候没有勾选指定安装项，添加command line client
 tools</font>
 3. 重启Idea
 
 ### 4.2 检索项目（git中clone操作）  
 1. 选择 VCS —> Checkout from Version Control —> Subversion
-![image.png](https://note.youdao.com/yws/res/f/WEBRESOURCEbb4f714aa002690c3d080863120f6a6f)         
+![20220109223235](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109223235.png)        
 
 2. 添加远程仓库中项⽬的URL  
-![image.png](https://note.youdao.com/yws/res/4/WEBRESOURCE78fbd15385ec1c88bea9e915929de2e4)   
+![20220109223344](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109223344.png)   
+
 3. 点击添加的URL，选择 Checkout  
-![image.png](https://note.youdao.com/yws/res/b/WEBRESOURCE6e7212f1311bddf845396d20f476f3ab)
+![20220109223411](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109223411.png)
   
 4. 选择检索的项⽬的存放位置   
-![image.png](https://note.youdao.com/yws/res/e/WEBRESOURCEdb58d919be945fe078e3f81412e908ce)
+![20220109223436](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109223436.png)
   
 5. 选择Destination，根据⾃⼰的偏好选择，其他配置默认，单击 OK
-![image.png](https://note.youdao.com/yws/res/3/WEBRESOURCE03620b18dbe3d7c5f2cbb7ed59131f63)
+![20220109223501](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109223501.png)
   
 6. 选择 1.8 Format，点击 OK  
-![image.png](https://note.youdao.com/yws/res/c/WEBRESOURCE51d2d458c7d26f2db77f43151a56be3c)  
+![20220109223530](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109223530.png) 
   
 7. 已经check out⼀个项⽬，是否要打开，选择 Yes  
-![image.png](https://note.youdao.com/yws/res/a/WEBRESOURCE4ba7404da704986540eb51b63d1b243a)  
+![20220109223549](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109223549.png)  
+
 8. 选择 Add   
-![image.png](https://note.youdao.com/yws/res/8/WEBRESOURCEb6bae1a7ebb253f9a93cad6ea9f531c8)  
-9. 此时，项⽬就可以与远程仓库关联  
-![image.png](https://note.youdao.com/yws/res/7/WEBRESOURCEde09ca1a7db9fa26465939eb3e58c587)  
+![20220109223621](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109223621.png)  
+
+1. 此时，项⽬就可以与远程仓库关联  
+![20220109223642](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109223642.png)  
 
 ### 4.3 提交代码
 1. 选择 VCS —> Commit...   
-![image.png](https://note.youdao.com/yws/res/4/WEBRESOURCE057b623a152279d5f31882102d1324b4)   
+![20220109230011](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109230011.png)  
 
 2. 选择需要提交的⽂件，填写提交信息，选择 Commit  
-![image.png](https://note.youdao.com/yws/res/f/WEBRESOURCE030e88c41c83dbf78af78dd2e332c94f)        
+![20220109230035](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109230035.png)       
+  
 3. 提交成功后，会在Idea最下⾯显示提交状态  
-![image.png](https://note.youdao.com/yws/res/1/WEBRESOURCE936a05b31e7f1d6ae95d972dc67a3781)  
+![20220109230104](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109230104.png) 
+
 <font color = red>PS:提交前，先进行更新操作</font>
 
 ### 4.4 更新版本
 1. 选择 VCS —> Update Project...  
-![image.png](https://note.youdao.com/yws/res/4/WEBRESOURCE60bdb653cadcbca76ab6725082e91464)  
+![20220109230130](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109230130.png)  
 
 2. 默认即可，直接选择 OK   
-![image.png](https://note.youdao.com/yws/res/6/WEBRESOURCEaa022237ae6b4c2bd399b42bd0b875e6)   
+![20220109230205](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109230205.png)  
 
 3. 更新成功的提示信息  
-![image.png](https://note.youdao.com/yws/res/b/WEBRESOURCE2390d3372d84d7a25dcf5e7160ad693b)
+![20220109230226](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109230226.png)
 
-### 4.5 项目导入远程仓库
+### 4.5 项目导入远程仓库 
 1. 选择 VCS —> Import into Version Control —> Import into Subversion  
-![image.png](https://note.youdao.com/yws/res/1/WEBRESOURCE23595b66b61e1b22fb98708d84ec4861)    
+![20220109230254](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109230254.png)   
 
 2. 选择 "+" 添加项⽬导⼊的地址（可⼿动添加⼀个⽂件夹，项⽬中的⽂件会放置在该⽂件夹中，⽂件
 名⾃定义）  
-![image.png](https://note.youdao.com/yws/res/f/WEBRESOURCEc491c5ad0813bec7663396e1bc99d92f)  
+![20220109230313](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109230313.png) 
 
 3. 选择要导⼊的路径，选择 Import  
-![image.png](https://note.youdao.com/yws/res/b/WEBRESOURCEb41390417dd324253888f8b2d334ce3b)    
+![20220109230350](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109230350.png)  
 
 4. 选择要导⼊的项⽬，点击 OK    
-![image.png](https://note.youdao.com/yws/res/5/WEBRESOURCEd2ee47b8fcab6134876e39d0e90ba625)  
+![20220109230533](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109230533.png)
 
 5. 检查导⼊的路径，填写导⼊信息，选择 OK   
-![image.png](https://note.youdao.com/yws/res/9/WEBRESOURCE90f1950c71947ffeb546df38b1b04229)  
+ ![20220109230412](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109230412.png)
 6. 在远程仓库中检查是否导⼊成功即可。
 
 ### 4.6 版本冲突解决
 1. 如果未更新，就提交资源（有其他⽤户也提交过资源），则提交失败  
-![image.png](https://note.youdao.com/yws/res/6/WEBRESOURCEb4abe859694199576010eab1c4092e36)    
+![20220109230558](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109230558.png)  
 
 2. 此时，执⾏更新操作，将其他⼈提交过的资源更新到本地，会提示冲突  
-![image.png](https://note.youdao.com/yws/res/5/WEBRESOURCEfbdc079a92ef23e8f831e8c17589fab5)  
+![20220109230616](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109230616.png)  
+
 3. 通常选择合并，再选择需要保留的代码，选择好之后选择 Apply  
-![image.png](https://note.youdao.com/yws/res/8/WEBRESOURCEf730bfca66ea93c522e1916c5a643e58)  
+![20220109230637](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109230637.png)
+
 4. 提示更新成功  
-![image.png](https://note.youdao.com/yws/res/4/WEBRESOURCEa5f662ec3dfe96666a08d08222d0ee24)  
+![20220109230652](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109230652.png)  
+
 5. 再次选择提交，成功解决冲突  
-![image.png](https://note.youdao.com/yws/res/b/WEBRESOURCEdda5e0e2e86194b808ed6bad575c3e2b)
+![20220109230708](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109230708.png)
