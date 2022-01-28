@@ -6,10 +6,12 @@
 ### 1.2 SVN主要作用
 - 目录版本控制  
   Subversion 实现了⼀个 "虚拟" 的版本控管⽂件系统, 能够依时间跟踪整个⽬录的变动。⽬录和⽂件都能进⾏版本控制。
-- 真实的版本历史  
-   Subversion中，可以对⽂件和⽬录进行增加（add）、删除（delete）、复制（copy）和重命名（rename）等操作。所有的新加的⽂件都从⼀个新的、⼲净的版本开始。
+  
+- 真实的版本历史   
+Subversion中，可以对⽂件和⽬录进行增加（add）、删除（delete）、复制（copy）和重命名（rename）等操作。所有的新加的⽂件都从⼀个新的、⼲净的版本开始。  
+  
 - 自动提交  
-  <font color = grey>⼀个提交动作，不是全部更新到了档案库中，就是完全不更新。这允许开发⼈员以逻辑区间建⽴并提交变动，以防⽌当部分提交成功时出现的问题。</font>
+  <font color = grey>⼀个提交动作，不是全部更新到了档案库中，就是完全不更新。这允许开发⼈员以逻辑区间建⽴并提交变动，以防⽌当部分提交成功时出现的问题。</font>  
 
 ### 1.3 SVN基本操作
 - Repository（源代码库）：源代码统⼀存放的地⽅
@@ -89,7 +91,8 @@ Resolve 操作就是⽤来帮助⽤户找出冲突并告诉版本库如何处理
  <img style="width:550px;height:400px" src="https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/Snipaste_2022-01-09_22-24-37.png" />
     
 2. 配置svn  
-![20220109223029](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109223029.png) <font color = red>PS:找不到svn.exe⽂件，TortoiseSVN的bin⽬录下⾯没有svn.exe
+![20220109223029](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220109223029.png)  
+<font color = red>PS:找不到svn.exe⽂件，TortoiseSVN的bin⽬录下⾯没有svn.exe
 之所以没有是因为安装TortoiseSVN的时候没有勾选指定安装项，添加command line client
 tools</font>
 3. 重启Idea
