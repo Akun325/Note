@@ -204,7 +204,7 @@
     </build>
 ~~~
 
-1. 第三方网站请求授权服务接口
+2. 第三方网站请求授权服务接口
 ~~~java
 @Controller
 public class LoginController {
