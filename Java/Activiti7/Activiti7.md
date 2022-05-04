@@ -110,15 +110,16 @@
    - 顺序流：用一个带实心箭头的实心线表示，用于指定活动执行的顺序
    - 信息流：用一条带箭头的虚线表示，用于描述两个独立的业务参与者（业务实体/业务角色）之间发送和接受的消息流动
    - 关联：用一根带有线箭头的点线表示，用于将相关的数据、文本和其他人工信息与流对象联系起来。用于展示活动的输入和输出
+
 ![20220504211827](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220504211827.png)
 
 - 泳道（Swimlanes）：通过泳道对主要的建模元素进行分组，将活动划分到不同的可视化类别中来描述由不同的参与者的责任与职责。
 
 - BPMN实例
-   - 实例1：拍卖服务BPMN模板 
+   - 实例1：拍卖服务BPMN模板                 
      ![20220504190000](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220504190000.png)
 
-   - 实例2：书籍销售流程 BPMN
+   - 实例2：书籍销售流程 BPMN             
      ![20220504190046](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220504190046.png)
 
 ### 3.2 流程设计器
@@ -127,51 +128,72 @@
 - actiBPM的简单使用
 
 1. 新建流程(IDEA工具)
-  首先选中存放图形的目录(选择resources下的bpmn目录)，点击菜单：New  -> BpmnFile，如图：
+  首先选中存放图形的目录(选择resources下的bpmn目录)，点击菜单：New  -> BpmnFile，如图：         
+
 ![20220504212558](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220504212558.png)
-  弹出如下图所示框，输入evection 表示 出差审批流程：
+
+  弹出如下图所示框，输入evection 表示 出差审批流程：     
+
 ![20220504212620](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220504212620.png)
+
   起完名字evection后（默认扩展名为bpmn），就可以看到流程设计页面，如图所示：
+
 ![20220504212641](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220504212641.png)
+
  左侧区域是绘图区，右侧区域是palette画板区域
  鼠标先点击画板的元素即可在左侧绘图
 
 2. 绘制流程
   使用滑板来绘制流程，通过从右侧把图标拖拽到左侧的画板，最终效果如下：
+
 ![20220504212733](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220504212733.png)
 
 3. 指定流程定义Key
 流程定义key即流程定义的标识，通过properties视图查看流程的key
+
 ![20220504212805](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220504212805.png)
 
 4. 指定任务负责人
 在properties视图指定每个任务结点的负责人，如：填写出差申请的负责人为 zhangsan
+
 ![20220504212829](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220504212829.png)
 
 5. 生成.png图片文件
   ① 修改文件后缀为xml
      首先将evection.bpmn文件改名为evection.xml，如下图：
+
 ![20220504213631](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220504213631.png)
   
   ② 使用designer设计器打开.xml文件
+
      在evection.xml文件上面，点右键并选择Diagrams菜单，再选择Show BPMN2.0 Designer…
+
 ![20220504213829](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220504213829.png)
 
 
 6. 解决中文乱码
    ① 打开Settings，找到File Encodings，把encoding的选项都选择UTF-8
+
    ![20220504214059](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220504214059.png)
+
    ② 打开IDEA安装路径，找到如下的安装目录
+
    ![20220504214132](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220504214132.png)
+
    根据自己所安装的版本来决定，我使用的是64位的idea，所以在idea64.exe.vmoptions文件的最后一行追加一条命令： -Dfile.encoding=UTF-8 
    一定注意，不要有空格，否则重启IDEA时会打不开，然后 重启IDEA。
+
    ![20220504214155](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220504214155.png)
+
    ③ 如果以上方法已经做完，还出现乱码，就再修改一个文件，并在文件的末尾添加： -Dfile.encoding=UTF-8，然后重启idea
+
    ![20220504214218](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220504214218.png)
 
 7. 导出为图片文件
    点击Export To File的小图标，打开如下窗口，注意填写文件名及扩展名，选择好保存图片的位置：
+
 ![20220504214248](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220504214248.png)
+
    然后，我们把png文件拷贝到resources下的bpmn目录，并且把evection.xml改名为evection.bpmn。
 
 ### 3.3 Activiti工作流服务介绍 
@@ -580,6 +602,7 @@ SELECT * FROM act_ge_bytearray #资源表
     }
 ~~~
 输出结果: 
+
 ![20220504222942](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220504222942.png)
 
 - 操作影响的表
