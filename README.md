@@ -1,32 +1,44 @@
 # 个人编程学习笔记
-- java学习计划
-1. rouyi框架 *
-2. 动态代理 *
-3. Spring Security框架 *
-4. Actitivty7工作流
-5. Linux操作系统
-6. Java23种设计模式
-7. Spring源码
-8. Sevrlet
-9. Http原理
-10. SpringMvc源码
-11. SpringBoot源码
-12. Mybatis源码
-13. Mysql数据库
-14. Redis
-15. MangoDB
-16. JVM调优
-17. JUC包
-18. RabbitMQ
-19. Kafka
-20. Zookeeper
-21. ElasticSearch
-22. Xxl-Job
-23. Docker
-24. Jetty服务器
-25. Nginx服务器
-26. Tomcat服务器
-27. Netty服务器
+- Java学习计划
+ 1. rouyi框架 *
+ 2. 动态代理 *
+ 3. Spring Security框架 *
+ 4. Actitivty7工作流 
+ 5. Maven
+ 6. 表达式
+ 7. EasyExcel
+ 8. Linux操作系统  5.1 -5.10
+ 9. Java23种设计模式 5.11-5.30
+ 10. 项目1 工作流6.1-6.10
+ 11. Spring源码 6.11-6.20
+ 12. Sevrlet原理  6.21-6.25
+ 13. Http原理 6.26-6.30
+ 14. SpringMvc源码 7.1-7.10
+ 15. SpringBoot源码7.11-7.20
+ 16. 项目2 7.21-7.30
+ 17. JDBC原理 8.1-8.5
+ 18. Druid链接池 8.6-8.10
+ 19. Mybatis源码 8.11-8.20
+ 20. 项目3 8.21-8.30
+ 21. Mysql数据库 9.1-9.20
+ 22. Redis 9.21-9.30
+ 23. MangoDB 10.1-10.10
+ 24. 项目4 10.11-10.20
+ 25. JVM调优 10.21-11.10
+ 26. 项目5 11.11-11.20
+ 27. JUC包 11.21-11.30
+ 28. RabbitMQ 12.1-12.5
+ 29. Kafka 12.6-12.10
+ 30. Zookeeper 12.11-12.15
+ 31. ElasticSearch 12.16-12.25
+ 32. Xxl-Job 12.26-12.30
+ 33. 项目6 1.1-1.10
+ 34. Docker 1.11-1.15
+ 35. Jetty服务器 1.16-1.20
+ 36. Nginx服务器 1.21-1.25
+ 37. Tomcat服务器 1.26-1.30
+ 38. Netty服务器 2.1-2.10
+ 39. RPC框架
 
 - 计算机科学学习计划:
 1. 计算机网络
