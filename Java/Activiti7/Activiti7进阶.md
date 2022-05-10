@@ -197,6 +197,7 @@
      表达式支持解析基础类型、 bean、 list、 array 和 map，也可作为条件判断。 如下： ${order.price > 100 &&order.price < 250}
 
 - 编写代码配置负责人
+  
   ①定义任务分配流程变量
   ![20220508220415](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220508220415.png)
   &#160;
@@ -227,7 +228,7 @@
    **PS:由于使用了表达式分配，必须保证在任务执行过程表达式执行成功，比如： 某个任务使用了表达式${order.price > 100&& order.price < 250}，当执行该任务时必须保证 order 在 流程变量中存在，否则 activiti 异常。**
 
  &#160;
-3. 监听器分配
+1. 监听器分配
 - 可以使用监听器来完成很多Activiti流程的业务。
 - 任务监听器是发生对应的任务相关事件时执行自定义 java 逻辑 或表达式。 任务相当事件包括：
    ![20220508221610](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220508221610.png)    
@@ -380,7 +381,8 @@ public void findPersonalTaskList() {
 - 员工创建出差申请单，由部门经理审核，部门经理审核通过后出差3天及以下由人财务直接审批，3天以上先由总经理审核，总经理审核通过再由财务审批。
 ![20220509214241](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220509214241.png)
 &#160;
-2. 流程定义
+2. 流程定义 
+   
    ① 出差天数大于等于3连线条件
     ![20220509214436](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220509214436.png)                               
 
@@ -395,7 +397,7 @@ public void findPersonalTaskList() {
 
     ![20220509214557](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220509214557.png)
 &#160;
-3. 设置global流程变量
+1. 设置global流程变量
 - 在部门经理审核前设置流程变量，变量值为出差单信息（包括出差天数），部门经理审核后可以根据流程变量的值决定流程走向。
 - 创建POJO对象
 ```java
@@ -1100,8 +1102,11 @@ org.activiti.engine.ActivitiException: Unknown property used in expression: ${ev
 ![20220510221046](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220510221046.png)
 
    intermediateCatchEvent支持的事件类型：
+
    Message Event: 消息事件
+
    Singal Event：  信号事件
+   
    Timer Event：  定时事件
 
 - 示例
