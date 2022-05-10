@@ -230,7 +230,8 @@
 3. 监听器分配
 - 可以使用监听器来完成很多Activiti流程的业务。
 - 任务监听器是发生对应的任务相关事件时执行自定义 java 逻辑 或表达式。 任务相当事件包括：
-   ![20220508221610](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220508221610.png)
+   ![20220508221610](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220508221610.png)    
+
    Event的选项包含：
    ~~~
    Create：任务创建后触发
@@ -238,6 +239,7 @@
    Delete：任务完成后触发
    All：所有事件发生都触发
    ~~~
+
 - 定义任务监听类，且类必须实现 org.activiti.engine.delegate.TaskListener 接口
 ~~~java
 public class MyTaskListener implements TaskListener {
@@ -251,8 +253,10 @@ public class MyTaskListener implements TaskListener {
     }
 }
 ~~~
-DelegateTask对象的内容如下
+DelegateTask对象的内容如下     
+
 ![20220508221753](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220508221753.png)
+
 **PS:使用监听器分配方式，按照监听事件去执行监听类的 notify 方法，方法如果不能正常执行也会影响 任务的执行。**
 
 ### 2.2 查询任务
@@ -349,7 +353,8 @@ public void findPersonalTaskList() {
 **PS:虽然流程变量中可以存储业务数据可以通过activiti的api查询流程变量从而实现查询业务数据，但是不建议这样使用，因为业务数据查询由业务系统负责，activiti设置流程变量是为了流程执行需要而创建。**
 
 ### 3.2 流程变量类型
-- 将 pojo 存储到流程变量中，必须实现序列化接口 serializable，为了防止由于新增字段无 法反序列化，需要生成serialVersionUID。
+- 将 pojo 存储到流程变量中，必须实现序列化接口 serializable，为了防止由于新增字段无 法反序列化，需要生成serialVersionUID。      
+
   ![20220508224032](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220508224032.png)
 
 ### 3.3 流程变量作用域
@@ -377,12 +382,17 @@ public void findPersonalTaskList() {
 &#160;
 2. 流程定义
    ① 出差天数大于等于3连线条件
-    ![20220509214436](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220509214436.png)
+    ![20220509214436](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220509214436.png)                               
+
     也可以使用对象参数命名，如evection.num：
+
     ![20220509214509](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220509214509.png)
+
    ② 出差天数小于3连线条件
     ![20220509214535](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220509214535.png)
+
     也可以使用对象参数命名，如：
+
     ![20220509214557](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220509214557.png)
 &#160;
 3. 设置global流程变量
@@ -485,8 +495,9 @@ public class Evection implements Serializable {
 }
 ```
 &#160;
-- 设置Global流程变量
-   ① 流程启动时设置变量
+- 设置Global流程变量  
+  
+    ① 流程启动时设置变量
    - 通过Map<key,value>设置流程变量，map中可以设置多个变量，这个key就是流程变量的名字。
    ~~~java
         /**
@@ -549,6 +560,7 @@ public class Evection implements Serializable {
    ~~~
    **PS:startProcessInstanceByKey(processDefinitionKey, variables)流程变量作用域是一个流程实例，流程变量使用Map存储，同一个流程实例设置变量map中key相同，后者覆盖前者。**
 &#160;
+
    ② 完成任务时设置变量
    - 在完成任务时设置流程变量，该流程变量只有在该任务完成后其它结点才可使用该变量，它的作用域是整个流程实例，如果设置的流程变量的key在流程实例中已存在相同的名字则后设置的变量替换前边设置的变量。这里需要在创建出差单任务完成时设置流程变量.
    ~~~java
@@ -589,6 +601,7 @@ public class Evection implements Serializable {
    ~~~
    **PS:通过当前任务设置流程变量，需要指定当前任务id，如果当前执行的任务id不存在则抛出异常。任务办理时也是通过map<key,value>设置流程变量，一次可以设置多个变量。**
 &#160;
+
    ③ 通过当前流程实例设置
    - 通过流程实例id设置全局变量，该流程实例必须未执行完成。
     ~~~java
@@ -612,6 +625,7 @@ public class Evection implements Serializable {
     ~~~
     **PS:executionId必须当前未结束 流程实例的执行id，通常此id设置流程实例 的id。也可以通runtimeService.getVariable()获取流程变量。**
 &#160;
+
    ④ 通过当前任务设置
    ```java
    @Test
@@ -632,7 +646,7 @@ public class Evection implements Serializable {
    ```
    **PS:任务id必须是当前待办任务id，act_ru_task中存在。如果该任务已结束，会报错也可以通过taskService.getVariable()获取流程变量。**
 &#160;
-4. 注意事项
+1. 注意事项
 ① 如果UEL表达式中流程变量名不存在则报错。
 ② 如果UEL表达式中流程变量值为空NULL，流程不按UEL表达式去执行，而流程结束 。
 ③ 如果UEL表达式都不符合条件，流程结束
@@ -748,8 +762,10 @@ for (HistoricTaskInstance historicTaskInstance : list) {
 
 ### 4.2 设置任务候选人
 - 在流程图中任务节点的配置中设置 candidate-users(候选人)，多个候选人之间用逗号分开。
-![20220509223130](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220509223130.png)
+![20220509223130](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220509223130.png)  
+
 bpmn文件
+
 ~~~xml
 <userTask activiti:candidateUsers="lisi,wangwu" activiti:exclusive="true" id="_3" name="经理审批"/>
 ~~~
@@ -953,7 +969,8 @@ SELECT * FROM act_ru_identitylink
      ```
 &#160;
 
-- BPMN流程符号
+- BPMN流程符号  
+
 ![20220509225641](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220509225641.png)
 &#160;
 
@@ -977,10 +994,12 @@ SELECT * FROM act_ru_identitylink
 &#160;
 
 - BPMN流程符号
+
 ![20220510212528](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220510212528.png)
 &#160;
 
-- 示例
+- 示例  
+
 ![20220510212427](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220510212427.png)
   - 技术经理和项目经理是两个execution分支，在act_ru_execution表有两条记录分别是技术经理和项目经理，act_ru_execution还有一条记录表示该流程实例。
   - 待技术经理和项目经理任务全部完成，在汇聚点汇聚，通过parallelGateway并行网关。
@@ -1015,6 +1034,7 @@ SELECT * FROM act_ru_identitylink
 &#160;
 
 - BPMN流程符号
+
   ![20220510214658](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220510214658.png)
 &#160;
 
@@ -1072,9 +1092,11 @@ org.activiti.engine.ActivitiException: Unknown property used in expression: ${ev
 &#160;
 
 - BPMN流程符号
+
 ![20220510220957](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220510220957.png)
 
     intermediateCatchEvent：
+
 ![20220510221046](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220510221046.png)
 
    intermediateCatchEvent支持的事件类型：
