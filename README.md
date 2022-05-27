@@ -3,10 +3,10 @@
  1. rouyi框架 *
  2. 动态代理 *
  3. Spring Security框架 *
- 4. Actitivty7工作流 
+ 4. Actitivty7工作流 *
  5. Maven
- 6. 表达式
- 7. EasyExcel
+ 6. 表达式-- UEL CRON REGEX
+ 7. Excel操作框架--EasyExcel POI
  8. Linux操作系统  
  9. Java23种设计模式 
  10. 项目1 工作流
