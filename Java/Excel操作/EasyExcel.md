@@ -944,8 +944,8 @@ public void excelFull2() {
 - 填充之后的效果
   ![20220604220144](https://note--source.oss-cn-shenzhen.aliyuncs.com//notePic/20220604220144.png)
 
-### 2.5 Web操作(Excel上传/下载)
-#### 2.5.1 Excel下载
+### 2.4 Web操作(Excel上传/下载)
+#### 2.4.1 Excel下载
 - HTML
 ~~~html
 <a href="${pageContext.request.contextPath }/DownLoadExcel">下载</a>
@@ -991,7 +991,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 ~~~
 
 
-#### 2.5.2 Excel上传
+#### 2.4.2 Excel上传
 - 前端代码
 ~~~html
 <form action="${pageContext.request.contextPath }/UploadExcelServlet" method="post" enctype="multipart/form-data">
